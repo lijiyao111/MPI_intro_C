@@ -1,3 +1,6 @@
+/*
+Author: Jiyao Li
+*/
 #include <mpi.h>
 #include <stdio.h>
 
