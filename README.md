@@ -1,4 +1,5 @@
 # MPI introduction in C
+> Author: Jiyao Li
 
 > Personal notes: MPI vs openMP
 > - MPI is for distributed memory or shared memory, deals a lot of message passing. Message passing is more complicated and flexible. 
