@@ -144,4 +144,27 @@ The parallel computing strategy implemented in this code is that the rank 0 is t
 
 **plot_poisson_mpi.py** code read source_mpi.txt as the output from MPI code and source.txt as the output from the serial code and compare them. My tests show that the difference is 0, which means my MPI parallel code run correctly.
 
+# Hybrid parallel with MPI and openMP
+
+## Simple hello world example
+> Code: hybrid_hello.c
+
+```
+mpicc -fopenmp hybrid_hello.c -o hybrid_hello.exe
+export OMP_NUM_THREADS=4
+mpirun -n 2 ./hybrid_hello.exe
+```
+Output:
+```
+hello from proc = 0 of total 2 processes, 3 of total 4 threads running on DESKTOP-09SO6NE
+hello from proc = 0 of total 2 processes, 1 of total 4 threads running on DESKTOP-09SO6NE
+hello from proc = 0 of total 2 processes, 0 of total 4 threads running on DESKTOP-09SO6NE
+hello from proc = 1 of total 2 processes, 0 of total 4 threads running on DESKTOP-09SO6NE
+hello from proc = 1 of total 2 processes, 3 of total 4 threads running on DESKTOP-09SO6NE
+hello from proc = 1 of total 2 processes, 1 of total 4 threads running on DESKTOP-09SO6NE
+hello from proc = 1 of total 2 processes, 2 of total 4 threads running on DESKTOP-09SO6NE
+hello from proc = 0 of total 2 processes, 2 of total 4 threads running on DESKTOP-09SO6NE
+```
+
+
 
